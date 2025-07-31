@@ -36,7 +36,7 @@ export function AboutSection() {
                 </Card>
                 <Card>
                   <CardContent className="p-4 text-center">
-                    <div className="text-2xl font-bold text-secondary mb-1">5</div>
+                    <div className="text-2xl font-bold text-secondary mb-1">10</div>
                     <div className="text-sm text-muted-foreground">Years Operating</div>
                   </CardContent>
                 </Card>
