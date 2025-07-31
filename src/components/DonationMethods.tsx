@@ -9,6 +9,7 @@ const currencyOptions = [
   { value: "eth", label: "Ethereum (ETH)", icon: "⟠" },
   { value: "usdc", label: "USD Coin (USDC)", icon: "💵" },
   { value: "btc", label: "Bitcoin (BTC)", icon: "₿" },
+  { value: "fiat", label: "Traditional Banking", icon: "🏦" },
   { value: "other", label: "Other Currencies", icon: "🔄" }
 ];
 
@@ -49,6 +50,29 @@ const donationMethods = {
       address: "lno1zrxq8pjw7qjlm68mtp7e3yvxee4y5xrgjhhyf2fxhlphpckrvevh50u0qwkrce5ypja4pts2s5stp908e49mr4666r7ecxaszw83jx50yp9puqsr9sdhgk9r2ah4t675f9npga0fcqknkcavykwjh4t5undppjj5ps0sqvuvt2ghzf8dlmsnlugy8ysjyttanyz2kcn0r2mp9tusw7evujfavz6hr4vdqevk7qzzmtx3ac07wt8lqpzjqgfwqe8mzw57pkz8mawfgj0u9ljq7xcllwq2r9qv4nq26qg7uxamqqqse0q0eagq400rm5gx4unkz5w7qv",
       color: "bg-gradient-to-r from-yellow-500 to-yellow-600",
       description: "Instant Bitcoin payments via Lightning Network"
+    }
+  ],
+  fiat: [
+    {
+      type: "Euro Bank Transfer",
+      address: "3014211910745",
+      color: "bg-gradient-to-r from-blue-600 to-blue-700",
+      description: "International bank transfer (⚠️ 7€ fee per transfer)",
+      bankDetails: {
+        currency: "EUR",
+        accountNumber: "3014211910745",
+        swiftCode: "EQBLTZTZ",
+        bankCode: "047",
+        bankName: "EQUITY BANK TANZANIA LTD",
+        bankAddress: "ZANZIBAR",
+        postalAddress: "P.O BOX 110183, DAR ES SALAAM, TANZANIA"
+      }
+    },
+    {
+      type: "Mobile Money (Tigopesa)",
+      address: "+255678585256",
+      color: "bg-gradient-to-r from-green-500 to-green-600",
+      description: "Mobile money transfer in Tanzania (Modest's phone)"
     }
   ]
 };
@@ -112,7 +136,7 @@ export function DonationMethods() {
           </div>
 
           {selectedCurrency && selectedCurrency !== "other" && (
-            <div className={`grid gap-6 max-w-4xl mx-auto ${selectedCurrency === 'btc' ? 'md:grid-cols-2' : 'max-w-md'}`}>
+            <div className={`grid gap-6 max-w-4xl mx-auto ${(selectedCurrency === 'btc' || selectedCurrency === 'fiat') ? 'md:grid-cols-2' : 'max-w-md'}`}>
               {donationMethods[selectedCurrency as keyof typeof donationMethods]?.map((method, index) => (
                 <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 group">
                   <CardHeader className="pb-4">
@@ -153,11 +177,46 @@ export function DonationMethods() {
 
                   <CardContent className="space-y-4">
                     <div className="p-3 bg-muted rounded-lg">
-                      <div className="text-xs text-muted-foreground mb-1">Address:</div>
+                      <div className="text-xs text-muted-foreground mb-1">
+                        {method.bankDetails ? 'Account Number:' : 'Address:'}
+                      </div>
                       <div className="font-mono text-xs break-all leading-relaxed">
                         {method.address}
                       </div>
                     </div>
+
+                    {method.bankDetails && (
+                      <div className="space-y-3">
+                        <div className="grid grid-cols-2 gap-3 text-xs">
+                          <div>
+                            <span className="text-muted-foreground">Currency:</span>
+                            <div className="font-medium">{method.bankDetails.currency}</div>
+                          </div>
+                          <div>
+                            <span className="text-muted-foreground">SWIFT:</span>
+                            <div className="font-mono">{method.bankDetails.swiftCode}</div>
+                          </div>
+                          <div>
+                            <span className="text-muted-foreground">Bank Code:</span>
+                            <div className="font-mono">{method.bankDetails.bankCode}</div>
+                          </div>
+                          <div>
+                            <span className="text-muted-foreground">Bank:</span>
+                            <div className="font-medium text-xs">{method.bankDetails.bankName}</div>
+                          </div>
+                        </div>
+                        <div className="text-xs">
+                          <span className="text-muted-foreground">Address:</span>
+                          <div className="font-medium">{method.bankDetails.bankAddress}</div>
+                          <div className="font-medium">{method.bankDetails.postalAddress}</div>
+                        </div>
+                        <div className="p-2 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                          <p className="text-xs text-amber-800 dark:text-amber-200">
+                            ⚠️ <strong>Note:</strong> We pay 7€ for each incoming transfer. Please consider this for small donations to ensure your contribution is maximized.
+                          </p>
+                        </div>
+                      </div>
+                    )}
 
                     <div className="flex gap-2">
                       <Button
