@@ -4,6 +4,7 @@ import { DonationGoals } from "@/components/DonationGoals";
 import { DonationMethods } from "@/components/DonationMethods";
 import { FAQ } from "@/components/FAQ";
 import { PhotoGallery } from "@/components/PhotoGallery";
+import { SupportedBy } from "@/components/SupportedBy";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
       <DonationMethods />
       <FAQ />
       <PhotoGallery />
+      <SupportedBy />
       <Footer />
     </div>
   );
