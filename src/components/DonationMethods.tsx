@@ -138,9 +138,9 @@ export function DonationMethods() {
           {selectedCurrency && selectedCurrency !== "other" && (
             <div className={`grid gap-6 max-w-4xl mx-auto ${(selectedCurrency === 'btc' || selectedCurrency === 'fiat') ? 'md:grid-cols-2' : 'max-w-md'}`}>
               {donationMethods[selectedCurrency as keyof typeof donationMethods]?.map((method, index) => (
-                <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 group">
-                  <CardHeader className="pb-4">
-                    <div className={`h-2 w-full ${method.color} rounded-t-lg -mx-6 -mt-6 mb-4`} />
+                <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 group relative">
+                  <CardHeader className="pb-4 relative">
+                    <div className={`absolute top-0 left-0 right-0 h-2 ${method.color}`} />
                     <CardTitle className="text-lg flex items-center justify-between">
                       {method.type}
                       {method.explorer && (
