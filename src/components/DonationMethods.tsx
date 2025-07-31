@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Copy, ExternalLink, CheckCircle, ArrowRightLeft } from "lucide-react";
+import { SquidWidget } from "@0xsquid/widget";
+
 
 const currencyOptions = [
   { value: "eth", label: "Ethereum (ETH)", icon: "⟠" },
@@ -270,21 +272,49 @@ export function DonationMethods() {
                   </div>
                   <CardTitle className="text-xl">Swap Any Token</CardTitle>
                   <p className="text-muted-foreground">
-                    Use Squid Router to swap any cryptocurrency to our supported tokens
+                    Use Squid Router to swap any cryptocurrency to our supported tokens.
+                  </p>
+                  <p className="text-muted-foreground">
+                    Use the following address as a recipient:
+                  </p>
+                  <p>
+                    <div className="font-mono text-xs break-all leading-relaxed">
+                        {donationMethods.usdc[0].address}
+                    </div>
+                    <Button
+                        variant="copy"
+                        size="sm"
+                        onClick={() => copyToClipboard(donationMethods.usdc[0].address, donationMethods.usdc[0].type)}
+                        className="flex-1"
+                      >
+                        {copiedAddress === donationMethods.usdc[0].address ? (
+                          <>
+                            <CheckCircle className="h-4 w-4 mr-2 text-success" />
+                            Copied!
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="h-4 w-4 mr-2" />
+                            Copy Address
+                          </>
+                        )}
+                      </Button>
                   </p>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-muted/50 rounded-lg p-6 text-center">
-                    <p className="text-sm text-muted-foreground mb-4">
-                      The Squid Router widget will be loaded here, allowing you to swap from any supported cryptocurrency to ETH, USDC, or BTC that we can receive directly.
-                    </p>
-                    <div className="border-2 border-dashed border-muted-foreground/20 rounded-lg p-8">
-                      <p className="text-muted-foreground text-sm">
-                        Squid Router Widget
-                        <br />
-                        <span className="text-xs">(Integration in progress)</span>
-                      </p>
-                    </div>
+                  <div className="flex justify-center">
+                    <SquidWidget
+                      config={{
+                        integratorId: "donate-to-straight-training-center-283ed0f2-05ae-4b0e-bed9-a69593f1ce6f",
+                        apiUrl: "https://apiplus.squidrouter.com",
+                        initialAssets: {
+                          to: {
+                            address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+                            chainId: "8453",
+                          },
+                        },
+                      }}
+                    />
                   </div>
                 </CardContent>
               </Card>

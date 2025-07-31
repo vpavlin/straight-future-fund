@@ -15,10 +15,6 @@ const faqData = [
     answer: "Your donations go directly toward our five main goals: computer equipment (Raspberry Pi systems), yearly rent, educational trips for students, summer camps for teenagers, and eventually purchasing our own building. All funds are used transparently for educational purposes."
   },
   {
-    question: "Are donations tax-deductible?",
-    answer: "Tax deductibility depends on your local tax laws and regulations. We recommend consulting with a tax professional in your jurisdiction. We can provide donation receipts upon request."
-  },
-  {
     question: "Why do you accept cryptocurrency donations?",
     answer: "Cryptocurrency donations allow us to receive funds quickly and with lower fees compared to traditional international transfers. This is especially important for our location in Zanzibar, where international banking can be challenging."
   },
@@ -31,12 +27,8 @@ const faqData = [
     answer: "Yes! We welcome visitors who want to see our work firsthand. Please contact us in advance to arrange a visit. We're located in Zanzibar and would be happy to show you our facilities and introduce you to our students."
   },
   {
-    question: "What programming languages and technologies do you teach?",
-    answer: "We focus on practical technologies including Python, web development (HTML, CSS, JavaScript), basic networking, and computer literacy. With your help purchasing Raspberry Pi computers, we'll expand into IoT and embedded programming."
-  },
-  {
     question: "How many students benefit from the training center?",
-    answer: "We currently serve over 200 students of various ages, from young children learning basic computer skills to teenagers receiving advanced technical training. Your donations help us reach even more students in the community."
+    answer: "We currently serve arond 100 students of various ages, from young children learning English to teenagers receiving more advanced education. Your donations help us reach even more students and provide higher quality education."
   },
   {
     question: "What happens if you exceed your funding goals?",
@@ -45,6 +37,22 @@ const faqData = [
   {
     question: "Can I donate items instead of money?",
     answer: "While we primarily accept cryptocurrency donations, we're always open to discussing donations of educational equipment or materials. Please contact us to discuss what items might be most helpful."
+  },
+  {
+    question: "How are the wallets managed?",
+    answer: "Wallets are directly owned and controlled by Straign Line Center community."
+  },
+  {
+    question: "How are funds converted to local currency?",
+    answer: "For USDC we have partnered with NedaPay.xyz - a seamless platform for merchants and creators to get paid in local stablecoins. It allows Straight Training Center to convert collected funds (USDC) into local stablecoins and then off ramp to their bank account or a mobile wallet. For BTC we will use local peer-to-peer market to exchange to local currecnty (TZS) directly."
+  },
+  {
+    question: "What if I don’t have funds on Base, BTC or Bitcoin Lightning?",
+    answer: "We have integrated Squid Router for your convenience. It supports various chains and tokens and allows you to swap directly to ETH or USDC on Base or Mainnet. You can also set our donation address as a recipient to avoid need for any additional transactions."
+  },
+  {
+    question: "Can I remain anonymous?",
+    answer: "Yes, you can remain anonymous. We do not require any personal information for donations. If you would also like to preserve your on-chain privacy, consider using tools like Railgun, Privacy Pools and similar to break the link from your transaction history and then bridge to Base and donate."
   }
 ];
 
