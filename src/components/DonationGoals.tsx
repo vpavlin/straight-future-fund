@@ -206,7 +206,9 @@ export function DonationGoals() {
                           <span className={isNext ? 'text-primary font-medium' : ''}>
                             ${goal.raised.toLocaleString()} raised
                           </span>
-                          <span className="font-medium">${goal.target.toLocaleString()}</span>
+                          {(isNext || isCompleted) && (
+                            <span className="font-medium">${goal.target.toLocaleString()}</span>
+                          )}
                         </div>
                         <Progress 
                           value={goal.progress} 
