@@ -118,7 +118,7 @@ export function DonationGoals() {
                               onClick={() => document.getElementById('donation-methods')?.scrollIntoView({ behavior: 'smooth' })}
                             >
                               <Heart className="mr-2 h-5 w-5" />
-                              Donate to Computer Equipment
+                              Donate
                             </Button>
                           </div>
                         )}
