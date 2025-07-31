@@ -19,12 +19,6 @@
 
   <body>
     <div id="root"></div>
-    <script>
-      // Polyfill Buffer for browser compatibility
-      if (typeof global === 'undefined') {
-        globalThis.global = globalThis;
-      }
-    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

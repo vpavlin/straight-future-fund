@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Copy, ExternalLink, CheckCircle, ArrowRightLeft } from "lucide-react";
-import { SquidWidget } from "@0xsquid/widget";
+
 
 
 const currencyOptions = [
@@ -303,18 +303,30 @@ export function DonationMethods() {
                 </CardHeader>
                 <CardContent>
                   <div className="flex justify-center">
-                    <SquidWidget
-                      config={{
-                        integratorId: "donate-to-straight-training-center-283ed0f2-05ae-4b0e-bed9-a69593f1ce6f",
-                        apiUrl: "https://apiplus.squidrouter.com",
-                        initialAssets: {
-                          to: {
-                            address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-                            chainId: "8453",
-                          },
-                        },
-                      }}
-                    />
+                    <div className="text-center py-8">
+                      <p className="text-muted-foreground mb-4">
+                        Visit Squid Router at{" "}
+                        <a 
+                          href="https://squidrouter.com" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline"
+                        >
+                          squidrouter.com
+                        </a>
+                        {" "}to swap any token to USDC on Base network.
+                      </p>
+                      <Button asChild variant="outline">
+                        <a 
+                          href="https://squidrouter.com" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          Open Squid Router
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

@@ -14,17 +14,9 @@ export default defineConfig(({ mode }) => ({
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
-  define: {
-    global: 'globalThis',
-    Buffer: 'Buffer',
-  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      buffer: "buffer",
     },
-  },
-  optimizeDeps: {
-    include: ["buffer"],
   },
 }));
