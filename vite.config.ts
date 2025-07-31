@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => ({
   ].filter(Boolean),
   define: {
     global: 'globalThis',
+    Buffer: 'Buffer',
   },
   resolve: {
     alias: {
