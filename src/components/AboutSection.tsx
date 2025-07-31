@@ -15,16 +15,16 @@ export function AboutSection() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                The Straight Training Center is a vital educational institution in Zanzibar, 
-                dedicated to providing quality training and education opportunities for local students. 
-                Our mission is to empower young minds with practical skills and knowledge that will 
-                help them build successful futures.
+                Our aim is to support the community in Fuoni Mambosasa in educational matters, 
+                especially learning English. We help people who live challenging lives by teaching 
+                them to read and write, and learn different languages to create employment 
+                opportunities for themselves, including becoming tour guides in the tourism industry.
               </p>
               
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Located in the heart of Zanzibar, our center focuses on technology education, 
-                vocational training, and personal development. We believe that every student 
-                deserves access to modern educational resources and opportunities.
+                We also support children who need help with school subjects so they can excel 
+                in their education. Our focus is on providing quality educational opportunities 
+                that empower young minds with practical skills for successful futures.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
@@ -45,26 +45,28 @@ export function AboutSection() {
             
             <div className="space-y-4">
               <Card className="p-6 border-primary/20 bg-primary/5">
-                <h3 className="text-xl font-semibold text-primary mb-3">Our Mission</h3>
+                <h3 className="text-xl font-semibold text-primary mb-3">Our Activities</h3>
                 <p className="text-muted-foreground">
-                  To provide accessible, high-quality education and training that empowers 
-                  students with the skills needed for the digital age.
+                  We teach English to children and teenagers from Fuoni Mambosasa every evening 
+                  from 7pm to 9pm, especially those from disadvantaged backgrounds or orphans, 
+                  providing opportunities to practice through debates, role plays, theatres, and games.
                 </p>
               </Card>
               
               <Card className="p-6 border-secondary/20 bg-secondary/5">
-                <h3 className="text-xl font-semibold text-secondary mb-3">Our Vision</h3>
+                <h3 className="text-xl font-semibold text-secondary mb-3">Safe Learning Space</h3>
                 <p className="text-muted-foreground">
-                  To become Zanzibar's leading training center, bridging the gap between 
-                  traditional education and modern technological demands.
+                  We provide students with a safe space to express themselves, feel at home, 
+                  belong to a family-like community, have role models and peers, and most 
+                  importantly, have fun while learning.
                 </p>
               </Card>
               
               <Card className="p-6 border-accent/20 bg-accent/5">
                 <h3 className="text-xl font-semibold text-accent-foreground mb-3">Our Impact</h3>
                 <p className="text-muted-foreground">
-                  Creating opportunities for local youth to develop technical skills, 
-                  fostering innovation, and building a stronger community.
+                  Creating employment opportunities through language skills, supporting academic 
+                  success, and building a stronger, more educated community in Fuoni Mambosasa.
                 </p>
               </Card>
             </div>
