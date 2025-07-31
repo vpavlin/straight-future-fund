@@ -117,9 +117,9 @@ export function DonationMethods() {
             </p>
           </div>
 
-          <div className="max-w-md mx-auto mb-8">
+          <div className="max-w-lg mx-auto mb-8">
             <Select value={selectedCurrency} onValueChange={setSelectedCurrency}>
-              <SelectTrigger className="w-full">
+              <SelectTrigger className="w-full h-14 text-lg">
                 <SelectValue placeholder="Select a currency to donate" />
               </SelectTrigger>
               <SelectContent>
