@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Monitor, Home, Plane, Mountain, Building2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Monitor, Home, Plane, Mountain, Building2, Heart } from "lucide-react";
 
 const goals = [
   {
@@ -105,6 +106,20 @@ export function DonationGoals() {
                               <span>{progress.toFixed(1)}% funded</span>
                               <span>${(goal.target - goal.raised).toLocaleString()} remaining</span>
                             </div>
+                          </div>
+                        )}
+                        
+                        {isFirstGoal && (
+                          <div className="mt-6 pt-4 border-t border-border">
+                            <Button 
+                              variant="default" 
+                              size="lg"
+                              className="w-full"
+                              onClick={() => document.getElementById('donation-methods')?.scrollIntoView({ behavior: 'smooth' })}
+                            >
+                              <Heart className="mr-2 h-5 w-5" />
+                              Donate to Computer Equipment
+                            </Button>
                           </div>
                         )}
                       </div>
