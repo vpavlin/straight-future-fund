@@ -15,38 +15,24 @@ const currencyOptions = [
 const donationMethods = {
   eth: [
     {
-      type: "Ethereum Mainnet",
+      type: "Ethereum (ETH)",
       address: "0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
       explorer: "https://etherscan.io/address/0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
       explorerName: "Etherscan",
       color: "bg-gradient-to-r from-purple-500 to-purple-600",
-      description: "Send ETH directly to our wallet"
-    },
-    {
-      type: "Base Network",
-      address: "0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
-      explorer: "https://basescan.org/address/0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
-      explorerName: "BaseScan",
-      color: "bg-gradient-to-r from-blue-400 to-blue-500",
-      description: "Lower fees on Base network"
+      description: "Send ETH on Ethereum Mainnet or Base Network (same address)",
+      networks: ["Ethereum Mainnet", "Base Network"]
     }
   ],
   usdc: [
     {
-      type: "Ethereum Mainnet",
+      type: "USDC Stablecoin",
       address: "0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
       explorer: "https://etherscan.io/token/0xa0b86a33e6e0e5cf1f5872e1b4e6ac1f5d5c2ea6?a=0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
       explorerName: "Etherscan",
       color: "bg-gradient-to-r from-blue-500 to-blue-600",
-      description: "Send USDC stablecoin to our wallet"
-    },
-    {
-      type: "Base Network",
-      address: "0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
-      explorer: "https://basescan.org/token/0x833589fcd6edb6e08f4c7c32d4f71b54bda02913?a=0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
-      explorerName: "BaseScan",
-      color: "bg-gradient-to-r from-cyan-500 to-cyan-600",
-      description: "USDC on Base for lower transaction fees"
+      description: "Send USDC on Ethereum Mainnet or Base Network (same address)",
+      networks: ["Ethereum Mainnet", "Base Network"]
     }
   ],
   btc: [
@@ -126,7 +112,7 @@ export function DonationMethods() {
           </div>
 
           {selectedCurrency && selectedCurrency !== "other" && (
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className={`grid gap-6 max-w-4xl mx-auto ${selectedCurrency === 'btc' ? 'md:grid-cols-2' : 'max-w-md'}`}>
               {donationMethods[selectedCurrency as keyof typeof donationMethods]?.map((method, index) => (
                 <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 group">
                   <CardHeader className="pb-4">
@@ -154,6 +140,15 @@ export function DonationMethods() {
                     <p className="text-sm text-muted-foreground">
                       {method.description}
                     </p>
+                    {method.networks && (
+                      <div className="flex flex-wrap gap-1 mt-2">
+                        {method.networks.map((network) => (
+                          <span key={network} className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
+                            {network}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </CardHeader>
 
                   <CardContent className="space-y-4">
