@@ -30,7 +30,7 @@ export default defineConfig(({ mode }) => ({
         plugins: [
             NodeGlobalsPolyfillPlugin({
                 buffer: true
-            })
+            }) as any
         ]
     }
 }
