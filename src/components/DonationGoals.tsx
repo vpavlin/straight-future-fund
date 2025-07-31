@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 import { Monitor, Home, Plane, Mountain, Building2 } from "lucide-react";
 
 const goals = [
@@ -70,9 +71,11 @@ export function DonationGoals() {
               These are the initiatives we're working towards to better serve our community in Fuoni Mambosasa.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {goals.map((goal) => {
+          <div className="space-y-6">
+            {goals.map((goal, index) => {
               const Icon = goal.icon;
+              const isFirstGoal = index === 0;
+              const progress = isFirstGoal ? (goal.raised / goal.target) * 100 : 0;
               
               return (
                 <Card key={goal.id} className="hover:shadow-lg transition-all duration-300">
@@ -81,13 +84,29 @@ export function DonationGoals() {
                       <div className="p-3 rounded-lg bg-primary/10">
                         <Icon className="h-6 w-6 text-primary" />
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <h3 className="text-lg font-semibold mb-2">
                           {goal.title}
                         </h3>
-                        <p className="text-muted-foreground">
+                        <p className="text-muted-foreground mb-4">
                           {goal.description}
                         </p>
+                        
+                        {isFirstGoal && (
+                          <div className="space-y-2">
+                            <div className="flex justify-between text-sm">
+                              <span className="text-primary font-medium">
+                                ${goal.raised.toLocaleString()} raised
+                              </span>
+                              <span className="font-medium">${goal.target.toLocaleString()}</span>
+                            </div>
+                            <Progress value={progress} className="h-2" />
+                            <div className="flex justify-between text-xs text-muted-foreground">
+                              <span>{progress.toFixed(1)}% funded</span>
+                              <span>${(goal.target - goal.raised).toLocaleString()} remaining</span>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </CardContent>
