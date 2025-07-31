@@ -223,15 +223,21 @@ export function DonationGoals() {
 
                     {/* Action Button */}
                     <div className="flex-shrink-0 ml-6">
-                      <Button 
-                        variant={isNext ? "default" : "outline"} 
-                        size="sm"
-                        disabled={isCompleted}
-                        className={isNext ? 'animate-pulse' : ''}
-                        onClick={() => document.getElementById('donation-methods')?.scrollIntoView({ behavior: 'smooth' })}
-                      >
-                        {isCompleted ? 'Completed' : isNext ? 'Donate Now' : 'Support Later'}
-                      </Button>
+                      {isNext && (
+                        <Button 
+                          variant="default"
+                          size="sm"
+                          className="animate-pulse"
+                          onClick={() => document.getElementById('donation-methods')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                          Donate Now
+                        </Button>
+                      )}
+                      {isCompleted && (
+                        <div className="px-3 py-2 text-sm font-medium text-primary">
+                          ✓ Completed
+                        </div>
+                      )}
                     </div>
                   </div>
                 </Card>
