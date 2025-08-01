@@ -191,7 +191,7 @@ export function useDonationBalances(): DonationBalances {
     fetchBalances();
     
     // Refresh every 30 seconds
-    const interval = setInterval(fetchBalances, 30000);
+    const interval = setInterval(fetchBalances, 60000);
 
     return () => {
       isMounted = false;
