@@ -292,13 +292,28 @@ export function DonationMethods() {
                   
                   <div className="bg-muted/50 rounded-lg p-4 mb-4">
                     <h4 className="font-semibold mb-3 text-sm">How to use Squid Router:</h4>
-                    <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
-                      <li>Wait for the Squid Router to load</li>
-                      <li>Connect your wallet</li>
-                      <li>Copy donation address below</li>
-                      <li>Set Recipient to the donation address</li>
-                      <li>Set amount and swap</li>
-                    </ol>
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2 text-sm">
+                        <span className="flex-shrink-0 w-5 h-5 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium">1</span>
+                        <span className="text-muted-foreground">Wait for the Squid Router to load</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <span className="flex-shrink-0 w-5 h-5 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium">2</span>
+                        <span className="text-muted-foreground">Connect your wallet</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <span className="flex-shrink-0 w-5 h-5 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium">3</span>
+                        <span className="text-muted-foreground">Copy donation address below</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <span className="flex-shrink-0 w-5 h-5 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium">4</span>
+                        <span className="text-muted-foreground">Set Recipient to the donation address</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-sm">
+                        <span className="flex-shrink-0 w-5 h-5 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium">5</span>
+                        <span className="text-muted-foreground">Set amount and swap</span>
+                      </div>
+                    </div>
                   </div>
                   
                   <p className="text-muted-foreground text-sm mb-2">
