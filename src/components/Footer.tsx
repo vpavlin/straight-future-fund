@@ -25,7 +25,7 @@ export function Footer() {
           </Button>
           
           <div className="mt-8 pt-8 border-t border-background/20 text-background/60 text-sm">
-            <p>© 2024 Straight Training Center. Building futures through education.</p>
+            <p>© 2025 Straight Training Center. Building futures through education.</p>
           </div>
         </div>
       </div>
