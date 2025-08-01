@@ -13,8 +13,8 @@ export function SupportedBy() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16">
             {/* Logos placeholder */}
             <div className="flex flex-col items-center group">
-              <div className="w-32 h-16 flex items-center justify-center mb-3 group-hover:border-primary/50 transition-colors">
-                <span className="text-muted-foreground/60 text-sm"><img src={logos} /></span>
+              <div className="w-32 h-16 flex items-center justify-center mb-4 group-hover:border-primary/50 transition-colors">
+                <img src={logos} alt="Logos.co" className="max-w-full max-h-full object-contain" />
               </div>
               <a 
                 href="https://logos.co" 
@@ -28,8 +28,8 @@ export function SupportedBy() {
 
             {/* Zanzalu placeholder */}
             <div className="flex flex-col items-center group">
-              <div className="w-32 h-16 flex items-center justify-center mb-3 group-hover:border-primary/50 transition-colors">
-                <span className="text-sm"><img src={zanzalu} /></span>
+              <div className="w-32 h-16 flex items-center justify-center mb-4 group-hover:border-primary/50 transition-colors">
+                <img src={zanzalu} alt="Zanzalu" className="max-w-full max-h-full object-contain" />
               </div>
               <a 
                 href="https://zanzalu.org" 
