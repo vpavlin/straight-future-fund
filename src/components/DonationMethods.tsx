@@ -286,11 +286,23 @@ export function DonationMethods() {
                     <ArrowRightLeft className="h-8 w-8 text-primary" />
                   </div>
                   <CardTitle className="text-xl">Swap Any Token</CardTitle>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground mb-4">
                     Use Squid Router to swap any cryptocurrency to our supported tokens.
                   </p>
-                  <p className="text-muted-foreground">
-                    Use the following address as a recipient:
+                  
+                  <div className="bg-muted/50 rounded-lg p-4 mb-4">
+                    <h4 className="font-semibold mb-3 text-sm">How to use Squid Router:</h4>
+                    <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
+                      <li>Wait for the Squid Router to load</li>
+                      <li>Connect your wallet</li>
+                      <li>Copy donation address below</li>
+                      <li>Set Recipient to the donation address</li>
+                      <li>Set amount and swap</li>
+                    </ol>
+                  </div>
+                  
+                  <p className="text-muted-foreground text-sm mb-2">
+                    <strong>Donation Address:</strong>
                   </p>
                   <p>
                     <div className="font-mono text-xs break-all leading-relaxed">
