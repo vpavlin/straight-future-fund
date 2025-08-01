@@ -1,3 +1,6 @@
+import logos from "@/assets/logos.svg"; // Adjust the import path as necessary
+import zanzalu from "@/assets/zanzalu.png"; // Adjust the import path as necessary
+
 export function SupportedBy() {
   return (
     <section className="py-16 bg-muted/30">
@@ -10,8 +13,8 @@ export function SupportedBy() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16">
             {/* Logos placeholder */}
             <div className="flex flex-col items-center group">
-              <div className="w-32 h-16 bg-muted border-2 border-dashed border-muted-foreground/30 rounded-lg flex items-center justify-center mb-3 group-hover:border-primary/50 transition-colors">
-                <span className="text-muted-foreground/60 text-sm">Logo</span>
+              <div className="w-32 h-16 flex items-center justify-center mb-3 group-hover:border-primary/50 transition-colors">
+                <span className="text-muted-foreground/60 text-sm"><img src={logos} /></span>
               </div>
               <a 
                 href="https://logos.co" 
@@ -25,8 +28,8 @@ export function SupportedBy() {
 
             {/* Zanzalu placeholder */}
             <div className="flex flex-col items-center group">
-              <div className="w-32 h-16 bg-muted border-2 border-dashed border-muted-foreground/30 rounded-lg flex items-center justify-center mb-3 group-hover:border-primary/50 transition-colors">
-                <span className="text-muted-foreground/60 text-sm">Logo</span>
+              <div className="w-32 h-16 flex items-center justify-center mb-3 group-hover:border-primary/50 transition-colors">
+                <span className="text-sm"><img src={zanzalu} /></span>
               </div>
               <a 
                 href="https://zanzalu.org" 
