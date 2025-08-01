@@ -20,4 +20,10 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  define: {
+    // By default, Vite doesn't include shims for NodeJS/
+    // necessary for segment analytics lib to work
+    global: {},
+    process: {"NODE_DEBUG": false, "env": {"NODE_ENV": mode}},
+  },
 }));

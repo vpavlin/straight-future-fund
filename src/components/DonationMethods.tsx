@@ -87,13 +87,28 @@ export function DonationMethods() {
   const copyToClipboard = async (address: string, type: string) => {
     try {
       await navigator.clipboard.writeText(address);
-      setCopiedAddress(address);
+      //setCopiedAddress(address);
       toast({
         title: "Address Copied!",
         description: `${type} address copied to clipboard`,
       });
-      setTimeout(() => setCopiedAddress(null), 2000);
+      //setTimeout(() => setCopiedAddress(null), 2000);
     } catch (err) {
+      toast({
+        title: "Copy Failed",
+        description: "Please copy the address manually",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const copyToClipboardNoToast = async (address: string) => {
+    try {
+      await navigator.clipboard.writeText(address);
+      //setCopiedAddress(address);
+      //setTimeout(() => setCopiedAddress(null), 2000);
+    } catch (err) {
+      console.error("Failed to copy address:", err);
       toast({
         title: "Copy Failed",
         description: "Please copy the address manually",
@@ -284,7 +299,7 @@ export function DonationMethods() {
                     <Button
                         variant="copy"
                         size="sm"
-                        onClick={() => copyToClipboard(donationMethods.usdc[0].address, donationMethods.usdc[0].type)}
+                        onClick={() => copyToClipboardNoToast(donationMethods.usdc[0].address)}
                         className="flex-1"
                       >
                         {copiedAddress === donationMethods.usdc[0].address ? (
