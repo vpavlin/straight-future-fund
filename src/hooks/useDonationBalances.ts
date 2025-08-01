@@ -26,8 +26,8 @@ export interface DonationBalances {
 const DONATION_ADDRESS = '0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8';
 
 // Free APIs for getting balances and prices
-const ALCHEMY_MAINNET_URL = 'https://eth-mainnet.g.alchemy.com/v2/demo';
-const ALCHEMY_BASE_URL = 'https://base-mainnet.g.alchemy.com/v2/demo';
+const ALCHEMY_MAINNET_URL = 'https://eth.llamarpc.com';
+const ALCHEMY_BASE_URL = 'https://base.llamarpc.com';
 const COINGECKO_API = 'https://api.coingecko.com/api/v3';
 
 const USDC_MAINNET = '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48';
