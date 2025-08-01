@@ -7,23 +7,23 @@ import gallery4 from "@/assets/gallery-4.jpg";
 const galleryImages = [
   {
     src: gallery1,
-    alt: "Students learning at computers in the training center",
-    title: "Computer Training Sessions"
+    alt: "",//"Students learning at computers in the training center",
+    title: "",//"Computer Training Sessions"
   },
   {
     src: gallery2,
-    alt: "Students working on Raspberry Pi computers",
-    title: "Hands-on Technology Learning"
+    alt: "",//"Students working on Raspberry Pi computers",
+    title: "",//"Hands-on Technology Learning"
   },
   {
     src: gallery3,
-    alt: "Teacher instructing students in the classroom",
-    title: "Collaborative Learning Environment"
+    alt: "",//"Teacher instructing students in the classroom",
+    title: "",//"Collaborative Learning Environment"
   },
   {
     src: gallery4,
-    alt: "Group photo of students and teachers",
-    title: "Our Amazing Community"
+    alt: "",//"Group photo of students and teachers",
+    title: "",//"Our Amazing Community"
   }
 ];
 
