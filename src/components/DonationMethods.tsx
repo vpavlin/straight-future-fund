@@ -349,7 +349,25 @@ export function DonationMethods() {
                       config={{
                         integratorId: "donate-to-straight-training-center-283ed0f2-05ae-4b0e-bed9-a69593f1ce6f",
                         apiUrl: "https://apiplus.squidrouter.com",
+                        defaultTokensPerChain: [
+                          {
+                            address: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                            chainId: "8453",
+                          },
+                          {
+                            address: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                            chainId: "1",
+                          },
+                          {
+                            address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+                            chainId: "8453",
+                          },
+                        ],
                         initialAssets: {
+                          from:                           {
+                            address: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                            chainId: "1",
+                          },
                           to: {
                             address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
                             chainId: "8453",
