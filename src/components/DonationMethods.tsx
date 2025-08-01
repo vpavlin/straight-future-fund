@@ -291,8 +291,8 @@ export function DonationMethods() {
                   </p>
                   
                   <div className="bg-muted/50 rounded-lg p-4 mb-4">
-                    <h4 className="font-semibold mb-3 text-sm">How to use Squid Router:</h4>
-                    <div className="space-y-2">
+                    <h4 className="font-semibold mb-3 text-sm text-center">How to use Squid Router:</h4>
+                    <div className="space-y-2 max-w-sm mx-auto">
                       <div className="flex items-start gap-2 text-sm">
                         <span className="flex-shrink-0 w-5 h-5 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-medium">1</span>
                         <span className="text-muted-foreground">Wait for the Squid Router to load</span>
