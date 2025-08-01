@@ -58,7 +58,7 @@ const goals = [
 ];
 
 export function DonationGoals() {
-  const { totalUSD, isLoading, error, eth, usdc } = useDonationBalances();
+  const { totalUSD, isLoading, error, eth, usdc, btc } = useDonationBalances();
   
   // Use real donation amount for the first goal (Computer Equipment)
   const realRaised = Math.round(totalUSD);
@@ -145,11 +145,16 @@ export function DonationGoals() {
                                   </div>
                                   <div>
                                     <span className="text-muted-foreground">USDC (Base):</span>
-                                    <div className="font-mono">{usdc.base.balance} USDC</div>
-                                    <div className="text-muted-foreground">${usdc.base.balanceUSD.toFixed(2)}</div>
-                                  </div>
-                                </div>
+                              <div className="font-mono">{usdc.base.balance} USDC</div>
+                                <div className="text-muted-foreground">${usdc.base.balanceUSD.toFixed(2)}</div>
                               </div>
+                              <div className="col-span-2">
+                                <span className="text-muted-foreground">BTC:</span>
+                                <div className="font-mono">{btc.balance} BTC</div>
+                                <div className="text-muted-foreground">${btc.balanceUSD.toFixed(2)}</div>
+                              </div>
+                            </div>
+                          </div>
                             )}
                           </div>
                         )}

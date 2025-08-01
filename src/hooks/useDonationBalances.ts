@@ -18,17 +18,20 @@ export interface DonationBalances {
     mainnet: TokenBalance;
     base: TokenBalance;
   };
+  btc: TokenBalance;
   totalUSD: number;
   isLoading: boolean;
   error: string | null;
 }
 
 const DONATION_ADDRESS = '0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8';
+const BTC_DONATION_ADDRESS = 'bc1qduj9sks7d7vct2y8tk4d6ve5frvx33vvftdscw';
 
 // Free APIs for getting balances and prices
 const ALCHEMY_MAINNET_URL = 'https://eth.llamarpc.com';
 const ALCHEMY_BASE_URL = 'https://base.llamarpc.com';
 const COINGECKO_API = 'https://api.coingecko.com/api/v3';
+const BLOCKSTREAM_API = 'https://blockstream.info/api';
 
 const USDC_MAINNET = '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48';
 const USDC_BASE = '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913';
@@ -43,6 +46,7 @@ export function useDonationBalances(): DonationBalances {
       mainnet: { address: USDC_MAINNET, balance: '0', balanceUSD: 0, decimals: 6, symbol: 'USDC', network: 'mainnet' },
       base: { address: USDC_BASE, balance: '0', balanceUSD: 0, decimals: 6, symbol: 'USDC', network: 'base' }
     },
+    btc: { address: BTC_DONATION_ADDRESS, balance: '0', balanceUSD: 0, decimals: 8, symbol: 'BTC', network: 'bitcoin' },
     totalUSD: 0,
     isLoading: true,
     error: null
@@ -57,12 +61,13 @@ export function useDonationBalances(): DonationBalances {
 
         // Fetch prices first
         const priceResponse = await fetch(
-          `${COINGECKO_API}/simple/price?ids=ethereum,usd-coin&vs_currencies=usd`
+          `${COINGECKO_API}/simple/price?ids=ethereum,usd-coin,bitcoin&vs_currencies=usd`
         );
         const prices = await priceResponse.json();
         
         const ethPrice = prices.ethereum?.usd || 0;
         const usdcPrice = prices['usd-coin']?.usd || 1;
+        const btcPrice = prices.bitcoin?.usd || 0;
 
         // Fetch ETH balance on Mainnet
         const ethMainnetResponse = await fetch(ALCHEMY_MAINNET_URL, {
@@ -126,12 +131,18 @@ export function useDonationBalances(): DonationBalances {
         const usdcBaseData = await usdcBaseResponse.json();
         const usdcBaseBalance = parseInt(usdcBaseData.result || '0x0', 16) / 1e6;
 
+        // Fetch Bitcoin balance
+        const btcResponse = await fetch(`${BLOCKSTREAM_API}/address/${BTC_DONATION_ADDRESS}`);
+        const btcData = await btcResponse.json();
+        const btcBalance = (btcData.chain_stats?.funded_txo_sum || 0) / 1e8; // Convert satoshis to BTC
+
         // Calculate total USD value
         const totalUSD = 
           (ethMainnetBalance * ethPrice) +
           (ethBaseBalance * ethPrice) +
           (usdcMainnetBalance * usdcPrice) +
-          (usdcBaseBalance * usdcPrice);
+          (usdcBaseBalance * usdcPrice) +
+          (btcBalance * btcPrice);
 
         if (isMounted) {
           setBalances({
@@ -170,6 +181,14 @@ export function useDonationBalances(): DonationBalances {
                 symbol: 'USDC',
                 network: 'base'
               }
+            },
+            btc: {
+              address: BTC_DONATION_ADDRESS,
+              balance: btcBalance.toFixed(8),
+              balanceUSD: btcBalance * btcPrice,
+              decimals: 8,
+              symbol: 'BTC',
+              network: 'bitcoin'
             },
             totalUSD,
             isLoading: false,
