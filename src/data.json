@@ -128,10 +128,10 @@
       ],
       "fiat": [
         {
-          "type": "Euro Bank Transfer",
+          "type": "Euro Bank Transfer (EUR)",
           "address": "3014211910745",
           "color": "bg-gradient-to-r from-blue-600 to-blue-700",
-          "description": "International bank transfer (⚠️ 7€ fee per transfer)",
+          "description": "International bank transfer in Euros (⚠️ 7€ fee per transfer)",
           "bankDetails": {
             "currency": "EUR",
             "accountNumber": "3014211910745",
@@ -143,10 +143,10 @@
           }
         },
         {
-          "type": "Mobile Money (Tigopesa)",
+          "type": "Mobile Money (TZS)",
           "address": "+255678585256",
           "color": "bg-gradient-to-r from-green-500 to-green-600",
-          "description": "Mobile money transfer in Tanzania (Modest's phone)"
+          "description": "Mobile money transfer in Tanzanian Shillings (Tigopesa - Modest's phone)"
         }
       ]
     }
