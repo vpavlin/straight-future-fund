@@ -12,7 +12,7 @@ export function AboutSection() {
             </span>
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-start">
             <div>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Our aim is to support the community in Fuoni Mambosasa in educational matters, 
