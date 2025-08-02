@@ -93,20 +93,38 @@ export function DonationGoals() {
             {goals.map((goal, index) => {
               const Icon = goal.icon;
               const isFirstGoal = index === 0;
+              const isActive = goal.status === "active";
               const currentRaised = isFirstGoal ? realRaised : goal.raised;
               const progress = isFirstGoal ? (currentRaised / goal.target) * 100 : 0;
               
               return (
-                <Card key={goal.id} className="hover:shadow-lg transition-all duration-300">
+                <Card key={goal.id} className={`transition-all duration-300 ${
+                  isActive 
+                    ? "hover:shadow-lg border-primary/20" 
+                    : "opacity-50 grayscale hover:opacity-75"
+                }`}>
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-lg bg-primary/10">
-                        <Icon className="h-6 w-6 text-primary" />
+                      <div className={`p-3 rounded-lg ${
+                        isActive ? "bg-primary/10" : "bg-muted/50"
+                      }`}>
+                        <Icon className={`h-6 w-6 ${
+                          isActive ? "text-primary" : "text-muted-foreground"
+                        }`} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold mb-2">
-                          {goal.title}
-                        </h3>
+                        <div className="flex items-center gap-2 mb-2">
+                          <h3 className={`text-lg font-semibold ${
+                            isActive ? "" : "text-muted-foreground"
+                          }`}>
+                            {goal.title}
+                          </h3>
+                          {!isActive && (
+                            <span className="text-xs px-2 py-1 bg-muted/50 text-muted-foreground rounded-full">
+                              Coming Soon
+                            </span>
+                          )}
+                        </div>
                         <p className="text-muted-foreground mb-4">
                           {goal.description}
                         </p>
