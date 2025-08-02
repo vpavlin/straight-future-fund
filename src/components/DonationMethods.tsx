@@ -139,7 +139,8 @@ export function DonationMethods() {
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Choose your preferred cryptocurrency to support the Straight Training Center. 
+              Choose your preferred cryptocurrency to support the{" "}
+              <span className="whitespace-nowrap">Straight Training Center</span>. 
               All donations go directly to improving education for our students.
             </p>
           </div>
