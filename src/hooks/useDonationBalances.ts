@@ -36,18 +36,44 @@ const BLOCKSTREAM_API = 'https://blockstream.info/api';
 const USDC_MAINNET = '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48';
 const USDC_BASE = '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913';
 
+const STORAGE_KEY = 'donation_balances';
+
+function getStoredBalances(): Partial<DonationBalances> | null {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    return stored ? JSON.parse(stored) : null;
+  } catch {
+    return null;
+  }
+}
+
+function storeBalances(balances: DonationBalances) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      eth: balances.eth,
+      usdc: balances.usdc,
+      btc: balances.btc,
+      totalUSD: balances.totalUSD
+    }));
+  } catch {
+    // Ignore storage errors
+  }
+}
+
 export function useDonationBalances(): DonationBalances {
+  const storedBalances = getStoredBalances();
+  
   const [balances, setBalances] = useState<DonationBalances>({
-    eth: {
+    eth: storedBalances?.eth || {
       mainnet: { address: DONATION_ADDRESS, balance: '0', balanceUSD: 0, decimals: 18, symbol: 'ETH', network: 'mainnet' },
       base: { address: DONATION_ADDRESS, balance: '0', balanceUSD: 0, decimals: 18, symbol: 'ETH', network: 'base' }
     },
-    usdc: {
+    usdc: storedBalances?.usdc || {
       mainnet: { address: USDC_MAINNET, balance: '0', balanceUSD: 0, decimals: 6, symbol: 'USDC', network: 'mainnet' },
       base: { address: USDC_BASE, balance: '0', balanceUSD: 0, decimals: 6, symbol: 'USDC', network: 'base' }
     },
-    btc: { address: BTC_DONATION_ADDRESS, balance: '0', balanceUSD: 0, decimals: 8, symbol: 'BTC', network: 'bitcoin' },
-    totalUSD: 0,
+    btc: storedBalances?.btc || { address: BTC_DONATION_ADDRESS, balance: '0', balanceUSD: 0, decimals: 8, symbol: 'BTC', network: 'bitcoin' },
+    totalUSD: storedBalances?.totalUSD || 0,
     isLoading: true,
     error: null
   });
@@ -145,7 +171,7 @@ export function useDonationBalances(): DonationBalances {
           (btcBalance * btcPrice);
 
         if (isMounted) {
-          setBalances({
+          const newBalances = {
             eth: {
               mainnet: {
                 address: DONATION_ADDRESS,
@@ -193,7 +219,10 @@ export function useDonationBalances(): DonationBalances {
             totalUSD,
             isLoading: false,
             error: null
-          });
+          };
+          
+          setBalances(newBalances);
+          storeBalances(newBalances);
         }
       } catch (error) {
         console.error('Error fetching donation balances:', error);
