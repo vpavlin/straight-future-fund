@@ -1,0 +1,242 @@
+{
+  "siteTitle": "Straight Training Center",
+  "about": {
+    "title": "About the Straight Training Center",
+    "description1": "Our aim is to support the community in Fuoni Mambosasa in educational matters, especially learning English. We help people who live challenging lives by teaching them to read and write, and learn different languages to create employment opportunities for themselves, including becoming tour guides in the tourism industry.",
+    "description2": "We also support children who need help with school subjects so they can excel in their education. Our focus is on providing quality educational opportunities that empower young minds with practical skills for successful futures.",
+    "stats": {
+      "studentsServed": "200+",
+      "yearsOperating": "10"
+    },
+    "activities": {
+      "title": "Our Activities",
+      "description": "We teach English to children and teenagers from Fuoni Mambosasa every evening from 7pm to 9pm, especially those from disadvantaged backgrounds or orphans, providing opportunities to practice through debates, role plays, theatres, and games."
+    },
+    "safeSpace": {
+      "title": "Safe Learning Space",
+      "description": "We provide students with a safe space to express themselves, feel at home, belong to a family-like community, have role models and peers, and most importantly, have fun while learning."
+    },
+    "impact": {
+      "title": "Our Impact",
+      "description": "Creating employment opportunities through language skills, supporting academic success, and building a stronger, more educated community in Fuoni Mambosasa."
+    }
+  },
+  "donationGoals": {
+    "title": "Our Goals",
+    "subtitle": "These are the initiatives we're working towards to better serve our community in Fuoni Mambosasa.",
+    "goals": [
+      {
+        "id": 1,
+        "title": "Computer Equipment",
+        "description": "10 Raspberry Pi computers with accessories for hands-on learning",
+        "target": 2000,
+        "raised": 1650,
+        "icon": "Monitor",
+        "priority": 1,
+        "status": "active"
+      },
+      {
+        "id": 2,
+        "title": "Yearly Rent",
+        "description": "Secure the school location for another year of education",
+        "target": 5000,
+        "raised": 300,
+        "icon": "Home",
+        "priority": 2,
+        "status": "pending"
+      },
+      {
+        "id": 3,
+        "title": "Student Trip",
+        "description": "Educational trip for all students to broaden their horizons",
+        "target": 3000,
+        "raised": 0,
+        "icon": "Plane",
+        "priority": 3,
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "title": "Teenage Camp",
+        "description": "Special summer camp for teenage students with advanced training",
+        "target": 4000,
+        "raised": 0,
+        "icon": "Mountain",
+        "priority": 4,
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "title": "Own Building",
+        "description": "Purchase our own building for long-term stability and growth",
+        "target": 50000,
+        "raised": 0,
+        "icon": "Building2",
+        "priority": 5,
+        "status": "pending"
+      }
+    ]
+  },
+  "donationMethods": {
+    "title": "Make a Donation",
+    "subtitle": "Choose your preferred cryptocurrency to support the Straight Training Center. All donations go directly to improving education for our students.",
+    "currencyOptions": [
+      { "value": "eth", "label": "Ethereum (ETH)", "icon": "⟠" },
+      { "value": "usdc", "label": "USD Coin (USDC)", "icon": "💵" },
+      { "value": "btc", "label": "Bitcoin (BTC)", "icon": "₿" },
+      { "value": "fiat", "label": "Traditional Banking", "icon": "🏦" },
+      { "value": "other", "label": "Other Currencies", "icon": "🔄" }
+    ],
+    "methods": {
+      "eth": [
+        {
+          "type": "Ethereum (ETH)",
+          "address": "0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
+          "explorer": "https://etherscan.io/address/0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
+          "explorerName": "Etherscan",
+          "color": "bg-gradient-to-r from-purple-500 to-purple-600",
+          "description": "Send ETH on Ethereum Mainnet or Base Network (same address)",
+          "networks": ["Ethereum Mainnet", "Base Network"]
+        }
+      ],
+      "usdc": [
+        {
+          "type": "USDC Stablecoin",
+          "address": "0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
+          "explorer": "https://etherscan.io/token/0xa0b86a33e6e0e5cf1f5872e1b4e6ac1f5d5c2ea6?a=0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
+          "explorerName": "Etherscan",
+          "color": "bg-gradient-to-r from-blue-500 to-blue-600",
+          "description": "Send USDC on Ethereum Mainnet or Base Network (same address)",
+          "networks": ["Ethereum Mainnet", "Base Network"]
+        }
+      ],
+      "btc": [
+        {
+          "type": "Bitcoin Network",
+          "address": "bc1qduj9sks7d7vct2y8tk4d6ve5frvx33vvftdscw",
+          "explorer": "https://blockstream.info/address/bc1qduj9sks7d7vct2y8tk4d6ve5frvx33vvftdscw",
+          "explorerName": "Blockstream",
+          "color": "bg-gradient-to-r from-orange-500 to-orange-600",
+          "description": "Send Bitcoin to our wallet"
+        },
+        {
+          "type": "Lightning Network",
+          "address": "lno1zrxq8pjw7qjlm68mtp7e3yvxee4y5xrgjhhyf2fxhlphpckrvevh50u0qwkrce5ypja4pts2s5stp908e49mr4666r7ecxaszw83jx50yp9puqsr9sdhgk9r2ah4t675f9npga0fcqknkcavykwjh4t5undppjj5ps0sqvuvt2ghzf8dlmsnlugy8ysjyttanyz2kcn0r2mp9tusw7evujfavz6hr4vdqevk7qzzmtx3ac07wt8lqpzjqgfwqe8mzw57pkz8mawfgj0u9ljq7xcllwq2r9qv4nq26qg7uxamqqqse0q0eagq400rm5gx4unkz5w7qv",
+          "color": "bg-gradient-to-r from-yellow-500 to-yellow-600",
+          "description": "Instant Bitcoin payments via Lightning Network"
+        }
+      ],
+      "fiat": [
+        {
+          "type": "Euro Bank Transfer",
+          "address": "3014211910745",
+          "color": "bg-gradient-to-r from-blue-600 to-blue-700",
+          "description": "International bank transfer (⚠️ 7€ fee per transfer)",
+          "bankDetails": {
+            "currency": "EUR",
+            "accountNumber": "3014211910745",
+            "swiftCode": "EQBLTZTZ",
+            "bankCode": "047",
+            "bankName": "EQUITY BANK TANZANIA LTD",
+            "bankAddress": "ZANZIBAR",
+            "postalAddress": "P.O BOX 110183, DAR ES SALAAM, TANZANIA"
+          }
+        },
+        {
+          "type": "Mobile Money (Tigopesa)",
+          "address": "+255678585256",
+          "color": "bg-gradient-to-r from-green-500 to-green-600",
+          "description": "Mobile money transfer in Tanzania (Modest's phone)"
+        }
+      ]
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about our project and donation process",
+    "questions": [
+      {
+        "question": "What is the Straight Training Center?",
+        "answer": "The Straight Training Center is an educational institution in Zanzibar focused on providing technology training and vocational education to local students. We aim to bridge the gap between traditional education and modern digital skills."
+      },
+      {
+        "question": "How will my donation be used?",
+        "answer": "Your donations go directly toward our five main goals: computer equipment (Raspberry Pi systems), yearly rent, educational trips for students, summer camps for teenagers, and eventually purchasing our own building. All funds are used transparently for educational purposes."
+      },
+      {
+        "question": "Why do you accept cryptocurrency donations?",
+        "answer": "Cryptocurrency donations allow us to receive funds quickly and with lower fees compared to traditional international transfers. This is especially important for our location in Zanzibar, where international banking can be challenging."
+      },
+      {
+        "question": "How can I verify that my donation was received?",
+        "answer": "All cryptocurrency transactions are public and can be verified on the blockchain. We provide explorer links for each wallet address where you can check the current balance and transaction history."
+      },
+      {
+        "question": "Can I visit the Straight Training Center?",
+        "answer": "Yes! We welcome visitors who want to see our work firsthand. Please contact us in advance to arrange a visit. We're located in Zanzibar and would be happy to show you our facilities and introduce you to our students."
+      },
+      {
+        "question": "How many students benefit from the training center?",
+        "answer": "We currently serve around 100 students of various ages, from young children learning English to teenagers receiving more advanced education. Your donations help us reach even more students and provide higher quality education."
+      },
+      {
+        "question": "What happens if you exceed your funding goals?",
+        "answer": "Any additional funds will go toward expanding our programs, purchasing more educational materials, hiring additional instructors, or improving our facilities. We believe in continuous improvement and growth."
+      },
+      {
+        "question": "Can I donate items instead of money?",
+        "answer": "While we primarily accept cryptocurrency donations, we're always open to discussing donations of educational equipment or materials. Please contact us to discuss what items might be most helpful."
+      },
+      {
+        "question": "How are the wallets managed?",
+        "answer": "Wallets are directly owned and controlled by Straight Line Center community."
+      },
+      {
+        "question": "How are funds converted to local currency?",
+        "answer": "For USDC we have partnered with NedaPay.xyz - a seamless platform for merchants and creators to get paid in local stablecoins. It allows Straight Training Center to convert collected funds (USDC) into local stablecoins and then off ramp to their bank account or a mobile wallet. For BTC we will use local peer-to-peer market to exchange to local currency (TZS) directly."
+      },
+      {
+        "question": "What if I don't have funds on Base, BTC or Bitcoin Lightning?",
+        "answer": "We have integrated Squid Router for your convenience. It supports various chains and tokens and allows you to swap directly to ETH or USDC on Base or Mainnet. You can also set our donation address as a recipient to avoid need for any additional transactions."
+      },
+      {
+        "question": "Can I remain anonymous?",
+        "answer": "Yes, you can remain anonymous. We do not require any personal information for donations. If you would also like to preserve your on-chain privacy, consider using tools like Railgun, Privacy Pools and similar to break the link from your transaction history and then bridge to Base and donate."
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "subtitle": "Take a look at life at the Straight Training Center and see the impact your donations can make in our students' lives.",
+    "visitMessage": {
+      "title": "Visit Us in Person",
+      "description": "These photos capture just a glimpse of the amazing work happening at our center. We welcome visitors who want to see our impact firsthand and meet our incredible students and teachers in Zanzibar."
+    },
+    "images": [
+      {
+        "src": "gallery-1.jpg",
+        "alt": "Students learning at computers in the training center",
+        "title": "Computer Training Sessions"
+      },
+      {
+        "src": "gallery-2.jpg",
+        "alt": "Students working on Raspberry Pi computers",
+        "title": "Hands-on Technology Learning"
+      },
+      {
+        "src": "gallery-3.jpg",
+        "alt": "Teacher instructing students in the classroom",
+        "title": "Collaborative Learning Environment"
+      },
+      {
+        "src": "gallery-4.jpg",
+        "alt": "Group photo of students and teachers",
+        "title": "Our Amazing Community"
+      }
+    ]
+  },
+  "walletAddresses": {
+    "ethereum": "0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
+    "bitcoin": "bc1qduj9sks7d7vct2y8tk4d6ve5frvx33vvftdscw"
+  }
+}

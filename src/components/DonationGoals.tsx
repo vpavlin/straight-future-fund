@@ -3,59 +3,15 @@ import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { Monitor, Home, Plane, Mountain, Building2, Heart, Loader2 } from "lucide-react";
 import { useDonationBalances } from "@/hooks/useDonationBalances";
+import data from "@/data.json";
 
-const goals = [
-  {
-    id: 1,
-    title: "Computer Equipment",
-    description: "10 Raspberry Pi computers with accessories for hands-on learning",
-    target: 2000,
-    raised: 1650,
-    icon: Monitor,
-    priority: 1,
-    status: "active" // active, completed, pending
-  },
-  {
-    id: 2,
-    title: "Yearly Rent",
-    description: "Secure the school location for another year of education",
-    target: 5000,
-    raised: 300,
-    icon: Home,
-    priority: 2,
-    status: "pending"
-  },
-  {
-    id: 3,
-    title: "Student Trip",
-    description: "Educational trip for all students to broaden their horizons",
-    target: 3000,
-    raised: 0,
-    icon: Plane,
-    priority: 3,
-    status: "pending"
-  },
-  {
-    id: 4,
-    title: "Teenage Camp",
-    description: "Special summer camp for teenage students with advanced training",
-    target: 4000,
-    raised: 0,
-    icon: Mountain,
-    priority: 4,
-    status: "pending"
-  },
-  {
-    id: 5,
-    title: "Own Building",
-    description: "Purchase our own building for long-term stability and growth",
-    target: 50000,
-    raised: 0,
-    icon: Building2,
-    priority: 5,
-    status: "pending"
-  }
-];
+const iconMap = {
+  Monitor,
+  Home,
+  Plane,
+  Mountain,
+  Building2
+};
 
 export function DonationGoals() {
   const { totalUSD, isLoading, error, eth, usdc, btc } = useDonationBalances();
@@ -80,11 +36,11 @@ export function DonationGoals() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Goals
+                {data.donationGoals.title.split(' ')[1]}
               </span>
             </h2>
             <p className="text-xl text-muted-foreground mb-6 max-w-3xl mx-auto leading-relaxed">
-              These are the initiatives we're working towards to better serve our community in Fuoni Mambosasa.
+              {data.donationGoals.subtitle}
             </p>
             {isLoading && (
               <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-4">
@@ -99,8 +55,8 @@ export function DonationGoals() {
             )}
           </div>
           <div className="space-y-6">
-            {goals.map((goal, index) => {
-              const Icon = goal.icon;
+            {data.donationGoals.goals.map((goal, index) => {
+              const Icon = iconMap[goal.icon as keyof typeof iconMap];
               const isFirstGoal = index === 0;
               const isActive = goal.status === "active";
               const currentRaised = isFirstGoal ? realRaised : goal.raised;

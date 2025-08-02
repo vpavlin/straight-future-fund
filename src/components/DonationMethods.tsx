@@ -6,78 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Copy, ExternalLink, CheckCircle, ArrowRightLeft } from "lucide-react";
 import { SquidWidget } from "@0xsquid/widget";
 
-
-const currencyOptions = [
-  { value: "eth", label: "Ethereum (ETH)", icon: "⟠" },
-  { value: "usdc", label: "USD Coin (USDC)", icon: "💵" },
-  { value: "btc", label: "Bitcoin (BTC)", icon: "₿" },
-  { value: "fiat", label: "Traditional Banking", icon: "🏦" },
-  { value: "other", label: "Other Currencies", icon: "🔄" }
-];
-
-const donationMethods = {
-  eth: [
-    {
-      type: "Ethereum (ETH)",
-      address: "0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
-      explorer: "https://etherscan.io/address/0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
-      explorerName: "Etherscan",
-      color: "bg-gradient-to-r from-purple-500 to-purple-600",
-      description: "Send ETH on Ethereum Mainnet or Base Network (same address)",
-      networks: ["Ethereum Mainnet", "Base Network"]
-    }
-  ],
-  usdc: [
-    {
-      type: "USDC Stablecoin",
-      address: "0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
-      explorer: "https://etherscan.io/token/0xa0b86a33e6e0e5cf1f5872e1b4e6ac1f5d5c2ea6?a=0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
-      explorerName: "Etherscan",
-      color: "bg-gradient-to-r from-blue-500 to-blue-600",
-      description: "Send USDC on Ethereum Mainnet or Base Network (same address)",
-      networks: ["Ethereum Mainnet", "Base Network"]
-    }
-  ],
-  btc: [
-    {
-      type: "Bitcoin Network",
-      address: "bc1qduj9sks7d7vct2y8tk4d6ve5frvx33vvftdscw",
-      explorer: "https://blockstream.info/address/bc1qduj9sks7d7vct2y8tk4d6ve5frvx33vvftdscw",
-      explorerName: "Blockstream",
-      color: "bg-gradient-to-r from-orange-500 to-orange-600",
-      description: "Send Bitcoin to our wallet"
-    },
-    {
-      type: "Lightning Network",
-      address: "lno1zrxq8pjw7qjlm68mtp7e3yvxee4y5xrgjhhyf2fxhlphpckrvevh50u0qwkrce5ypja4pts2s5stp908e49mr4666r7ecxaszw83jx50yp9puqsr9sdhgk9r2ah4t675f9npga0fcqknkcavykwjh4t5undppjj5ps0sqvuvt2ghzf8dlmsnlugy8ysjyttanyz2kcn0r2mp9tusw7evujfavz6hr4vdqevk7qzzmtx3ac07wt8lqpzjqgfwqe8mzw57pkz8mawfgj0u9ljq7xcllwq2r9qv4nq26qg7uxamqqqse0q0eagq400rm5gx4unkz5w7qv",
-      color: "bg-gradient-to-r from-yellow-500 to-yellow-600",
-      description: "Instant Bitcoin payments via Lightning Network"
-    }
-  ],
-  fiat: [
-    {
-      type: "Euro Bank Transfer",
-      address: "3014211910745",
-      color: "bg-gradient-to-r from-blue-600 to-blue-700",
-      description: "International bank transfer (⚠️ 7€ fee per transfer)",
-      bankDetails: {
-        currency: "EUR",
-        accountNumber: "3014211910745",
-        swiftCode: "EQBLTZTZ",
-        bankCode: "047",
-        bankName: "EQUITY BANK TANZANIA LTD",
-        bankAddress: "ZANZIBAR",
-        postalAddress: "P.O BOX 110183, DAR ES SALAAM, TANZANIA"
-      }
-    },
-    {
-      type: "Mobile Money (Tigopesa)",
-      address: "+255678585256",
-      color: "bg-gradient-to-r from-green-500 to-green-600",
-      description: "Mobile money transfer in Tanzania (Modest's phone)"
-    }
-  ]
-};
+import data from "@/data.json";
 
 export function DonationMethods() {
   const [selectedCurrency, setSelectedCurrency] = useState<string>("");
@@ -133,15 +62,13 @@ export function DonationMethods() {
               Support Our Mission
             </div>
             <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Make a{" "}
+              {data.donationMethods.title.split(' ').slice(0, 2).join(' ')}{" "}
               <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                Donation
+                {data.donationMethods.title.split(' ').slice(2).join(' ')}
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Choose your preferred cryptocurrency to support the{" "}
-              <span className="whitespace-nowrap">Straight Training Center</span>. 
-              All donations go directly to improving education for our students.
+              {data.donationMethods.subtitle}
             </p>
           </div>
 
@@ -151,7 +78,7 @@ export function DonationMethods() {
                 <SelectValue placeholder="Select a currency to donate" />
               </SelectTrigger>
               <SelectContent>
-                {currencyOptions.map((option) => (
+                {data.donationMethods.currencyOptions.map((option) => (
                   <SelectItem key={option.value} value={option.value}>
                     <span className="flex items-center gap-2">
                       <span>{option.icon}</span>
@@ -165,7 +92,7 @@ export function DonationMethods() {
 
           {selectedCurrency && selectedCurrency !== "other" && (
             <div className={`grid gap-6 max-w-4xl mx-auto ${(selectedCurrency === 'btc' || selectedCurrency === 'fiat') ? 'md:grid-cols-2' : 'max-w-md'}`}>
-              {donationMethods[selectedCurrency as keyof typeof donationMethods]?.map((method, index) => (
+              {data.donationMethods.methods[selectedCurrency as keyof typeof data.donationMethods.methods]?.map((method, index) => (
                 <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 group relative">
                   <CardHeader className="pb-4 relative">
                     <div className={`absolute top-0 left-0 right-0 h-2 ${method.color}`} />
@@ -331,16 +258,16 @@ export function DonationMethods() {
                     <strong>Donation Address:</strong>
                   </p>
                   <p>
-                    <div className="font-mono text-xs break-all leading-relaxed">
-                        {donationMethods.usdc[0].address}
-                    </div>
-                    <Button
-                        variant="copy"
-                        size="sm"
-                        onClick={() => copyToClipboardNoToast(donationMethods.usdc[0].address)}
-                        className="flex-1"
+                     <div className="font-mono text-xs break-all leading-relaxed">
+                        {data.walletAddresses.ethereum}
+                     </div>
+                     <Button
+                         variant="copy"
+                         size="sm"
+                         onClick={() => copyToClipboardNoToast(data.walletAddresses.ethereum)}
+                         className="flex-1"
                       >
-                        {copiedAddress === donationMethods.usdc[0].address ? (
+                        {copiedAddress === data.walletAddresses.ethereum ? (
                           <>
                             <CheckCircle className="h-4 w-4 mr-2 text-success" />
                             Copied!

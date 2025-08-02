@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import data from "@/data.json";
 
 export function AboutSection() {
   return (
@@ -17,29 +18,24 @@ export function AboutSection() {
             <div className="flex flex-col h-full">
               <div className="flex-1">
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Our aim is to support the community in Fuoni Mambosasa in educational matters, 
-                  especially learning English. We help people who live challenging lives by teaching 
-                  them to read and write, and learn different languages to create employment 
-                  opportunities for themselves, including becoming tour guides in the tourism industry.
+                  {data.about.description1}
                 </p>
                 
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  We also support children who need help with school subjects so they can excel 
-                  in their education. Our focus is on providing quality educational opportunities 
-                  that empower young minds with practical skills for successful futures.
+                  {data.about.description2}
                 </p>
               </div>
               
               <div className="grid grid-cols-2 gap-4 mt-auto">
                 <Card>
                   <CardContent className="p-4 text-center">
-                    <div className="text-2xl font-bold text-primary mb-1">200+</div>
+                    <div className="text-2xl font-bold text-primary mb-1">{data.about.stats.studentsServed}</div>
                     <div className="text-sm text-muted-foreground">Students Served</div>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardContent className="p-4 text-center">
-                    <div className="text-2xl font-bold text-secondary mb-1">10</div>
+                    <div className="text-2xl font-bold text-secondary mb-1">{data.about.stats.yearsOperating}</div>
                     <div className="text-sm text-muted-foreground">Years Operating</div>
                   </CardContent>
                 </Card>
@@ -48,28 +44,23 @@ export function AboutSection() {
             
             <div className="space-y-4">
               <Card className="p-6 border-primary/20 bg-primary/5">
-                <h3 className="text-xl font-semibold text-primary mb-3">Our Activities</h3>
+                <h3 className="text-xl font-semibold text-primary mb-3">{data.about.activities.title}</h3>
                 <p className="text-muted-foreground">
-                  We teach English to children and teenagers from Fuoni Mambosasa every evening 
-                  from 7pm to 9pm, especially those from disadvantaged backgrounds or orphans, 
-                  providing opportunities to practice through debates, role plays, theatres, and games.
+                  {data.about.activities.description}
                 </p>
               </Card>
               
               <Card className="p-6 border-secondary/20 bg-secondary/5">
-                <h3 className="text-xl font-semibold text-secondary mb-3">Safe Learning Space</h3>
+                <h3 className="text-xl font-semibold text-secondary mb-3">{data.about.safeSpace.title}</h3>
                 <p className="text-muted-foreground">
-                  We provide students with a safe space to express themselves, feel at home, 
-                  belong to a family-like community, have role models and peers, and most 
-                  importantly, have fun while learning.
+                  {data.about.safeSpace.description}
                 </p>
               </Card>
               
               <Card className="p-6 border-accent/20 bg-accent/5">
-                <h3 className="text-xl font-semibold text-accent-foreground mb-3">Our Impact</h3>
+                <h3 className="text-xl font-semibold text-accent-foreground mb-3">{data.about.impact.title}</h3>
                 <p className="text-muted-foreground">
-                  Creating employment opportunities through language skills, supporting academic 
-                  success, and building a stronger, more educated community in Fuoni Mambosasa.
+                  {data.about.impact.description}
                 </p>
               </Card>
             </div>
