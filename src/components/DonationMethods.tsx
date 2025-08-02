@@ -118,17 +118,27 @@ export function DonationMethods() {
   };
 
   return (
-    <section id="donation-methods" className="py-16 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="donation-methods" className="py-20 bg-gradient-to-br from-primary/10 via-secondary/10 to-background relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute top-10 left-10 w-40 h-40 bg-primary/15 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-10 right-10 w-56 h-56 bg-secondary/15 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/15 border border-primary/30 rounded-full text-primary font-semibold text-sm mb-6 shadow-lg">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+              Support Our Mission
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Make a{" "}
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
                 Donation
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Choose your preferred cryptocurrency to support the Straight Training Center. 
               All donations go directly to improving education for our students.
             </p>
