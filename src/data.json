@@ -85,7 +85,8 @@
       { "value": "usdc", "label": "USD Coin (USDC)", "icon": "💵" },
       { "value": "btc", "label": "Bitcoin (BTC)", "icon": "₿" },
       { "value": "other", "label": "Other Cryptocurrencies", "icon": "🔄" },
-      { "value": "fiat", "label": "Traditional Banking", "icon": "🏦" }
+      { "value": "eur", "label": "Euro Bank Transfer (EUR)", "icon": "🏦" },
+      { "value": "tzs", "label": "Mobile Money (TZS)", "icon": "📱" }
     ],
     "methods": {
       "eth": [
@@ -126,7 +127,7 @@
           "description": "Instant Bitcoin payments via Lightning Network"
         }
       ],
-      "fiat": [
+      "eur": [
         {
           "type": "Euro Bank Transfer (EUR)",
           "address": "3014211910745",
@@ -141,7 +142,9 @@
             "bankAddress": "ZANZIBAR",
             "postalAddress": "P.O BOX 110183, DAR ES SALAAM, TANZANIA"
           }
-        },
+        }
+      ],
+      "tzs": [
         {
           "type": "Mobile Money (TZS)",
           "address": "+255678585256",
