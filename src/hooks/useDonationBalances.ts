@@ -74,16 +74,22 @@ export function useDonationBalances(): DonationBalances {
     },
     btc: storedBalances?.btc || { address: BTC_DONATION_ADDRESS, balance: '0', balanceUSD: 0, decimals: 8, symbol: 'BTC', network: 'bitcoin' },
     totalUSD: storedBalances?.totalUSD || 0,
-    isLoading: true,
+    isLoading: !storedBalances,
     error: null
   });
 
   useEffect(() => {
     let isMounted = true;
+    let isInitialLoad = true;
 
     async function fetchBalances() {
       try {
-        setBalances(prev => ({ ...prev, isLoading: true, error: null }));
+        // Only show loading on initial load, not on subsequent updates
+        if (isInitialLoad) {
+          setBalances(prev => ({ ...prev, isLoading: true, error: null }));
+        } else {
+          setBalances(prev => ({ ...prev, error: null }));
+        }
 
         // Fetch prices first
         const priceResponse = await fetch(
@@ -223,6 +229,7 @@ export function useDonationBalances(): DonationBalances {
           
           setBalances(newBalances);
           storeBalances(newBalances);
+          isInitialLoad = false;
         }
       } catch (error) {
         console.error('Error fetching donation balances:', error);
