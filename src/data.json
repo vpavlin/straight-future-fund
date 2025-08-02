@@ -47,31 +47,31 @@
       },
       {
         "id": 3,
-        "title": "Student Trip",
-        "description": "Educational trip for all students to broaden their horizons",
-        "target": 3000,
-        "raised": 0,
-        "icon": "Plane",
-        "priority": 3,
-        "status": "pending"
-      },
-      {
-        "id": 4,
-        "title": "Teenage Camp",
-        "description": "Special summer camp for teenage students with advanced training",
-        "target": 4000,
-        "raised": 0,
-        "icon": "Mountain",
-        "priority": 4,
-        "status": "pending"
-      },
-      {
-        "id": 5,
         "title": "Own Building",
         "description": "Purchase our own building for long-term stability and growth",
         "target": 50000,
         "raised": 0,
         "icon": "Building2",
+        "priority": 3,
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "title": "Student Trip",
+        "description": "Educational trip for all students to broaden their horizons",
+        "target": 3000,
+        "raised": 0,
+        "icon": "Plane",
+        "priority": 4,
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "title": "Teenage Camp",
+        "description": "Special summer camp for teenage students with advanced training",
+        "target": 4000,
+        "raised": 0,
+        "icon": "Mountain",
         "priority": 5,
         "status": "pending"
       }
