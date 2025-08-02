@@ -94,53 +94,53 @@ export function DonationGoals() {
                           {goal.description}
                         </p>
                         
-                        {isFirstGoal && (
-                          <div className="space-y-2">
-                            <div className="flex justify-between text-sm">
-                              <span className="text-primary font-medium">
-                                ${currentRaised.toLocaleString()} raised
-                              </span>
-                              <span className="font-medium">${goal.target.toLocaleString()}</span>
-                            </div>
-                            <Progress value={progress} className="h-2" />
-                            <div className="flex justify-between text-xs text-muted-foreground">
-                              <span>{progress.toFixed(1)}% funded</span>
-                              <span>${(goal.target - currentRaised).toLocaleString()} remaining</span>
-                            </div>
-                            {isFirstGoal && !isLoading && (
-                              <div className="mt-3 p-3 bg-muted/30 rounded-lg text-xs space-y-1">
-                                <div className="font-medium text-muted-foreground mb-2">Live balances:</div>
-                                <div className="grid grid-cols-2 gap-2">
-                                  <div>
-                                    <span className="text-muted-foreground">ETH (Mainnet):</span>
-                                    <div className="font-mono">{eth.mainnet.balance} ETH</div>
-                                    <div className="text-muted-foreground">${eth.mainnet.balanceUSD.toFixed(2)}</div>
-                                  </div>
-                                  <div>
-                                    <span className="text-muted-foreground">ETH (Base):</span>
-                                    <div className="font-mono">{eth.base.balance} ETH</div>
-                                    <div className="text-muted-foreground">${eth.base.balanceUSD.toFixed(2)}</div>
-                                  </div>
-                                  <div>
-                                    <span className="text-muted-foreground">USDC (Mainnet):</span>
-                                    <div className="font-mono">{usdc.mainnet.balance} USDC</div>
-                                    <div className="text-muted-foreground">${usdc.mainnet.balanceUSD.toFixed(2)}</div>
-                                  </div>
-                                  <div>
-                                    <span className="text-muted-foreground">USDC (Base):</span>
-                              <div className="font-mono">{usdc.base.balance} USDC</div>
-                                <div className="text-muted-foreground">${usdc.base.balanceUSD.toFixed(2)}</div>
-                              </div>
-                              <div className="col-span-2">
-                                <span className="text-muted-foreground">BTC:</span>
-                                <div className="font-mono">{btc.balance} BTC</div>
-                                <div className="text-muted-foreground">${btc.balanceUSD.toFixed(2)}</div>
-                              </div>
-                            </div>
+                        <div className="space-y-2">
+                          <div className="flex justify-between text-sm">
+                            <span className={`font-medium ${isActive ? "text-primary" : "text-muted-foreground"}`}>
+                              ${currentRaised.toLocaleString()} raised
+                            </span>
+                            <span className="font-medium">${goal.target.toLocaleString()}</span>
                           </div>
-                            )}
+                          <Progress value={progress} className="h-2" />
+                          <div className="flex justify-between text-xs text-muted-foreground">
+                            <span>{progress.toFixed(1)}% funded</span>
+                            <span className="font-medium">
+                              ${(goal.target - currentRaised).toLocaleString()} needed
+                            </span>
                           </div>
-                        )}
+                          {isFirstGoal && !isLoading && (
+                            <div className="mt-3 p-3 bg-muted/30 rounded-lg text-xs space-y-1">
+                              <div className="font-medium text-muted-foreground mb-2">Live balances:</div>
+                              <div className="grid grid-cols-2 gap-2">
+                                <div>
+                                  <span className="text-muted-foreground">ETH (Mainnet):</span>
+                                  <div className="font-mono">{eth.mainnet.balance} ETH</div>
+                                  <div className="text-muted-foreground">${eth.mainnet.balanceUSD.toFixed(2)}</div>
+                                </div>
+                                <div>
+                                  <span className="text-muted-foreground">ETH (Base):</span>
+                                  <div className="font-mono">{eth.base.balance} ETH</div>
+                                  <div className="text-muted-foreground">${eth.base.balanceUSD.toFixed(2)}</div>
+                                </div>
+                                <div>
+                                  <span className="text-muted-foreground">USDC (Mainnet):</span>
+                                  <div className="font-mono">{usdc.mainnet.balance} USDC</div>
+                                  <div className="text-muted-foreground">${usdc.mainnet.balanceUSD.toFixed(2)}</div>
+                                </div>
+                                <div>
+                                  <span className="text-muted-foreground">USDC (Base):</span>
+                                  <div className="font-mono">{usdc.base.balance} USDC</div>
+                                  <div className="text-muted-foreground">${usdc.base.balanceUSD.toFixed(2)}</div>
+                                </div>
+                                <div className="col-span-2">
+                                  <span className="text-muted-foreground">BTC:</span>
+                                  <div className="font-mono">{btc.balance} BTC</div>
+                                  <div className="text-muted-foreground">${btc.balanceUSD.toFixed(2)}</div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
                         
                         {isFirstGoal && (
                           <div className="mt-6 pt-4 border-t border-border">
