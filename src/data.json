@@ -84,8 +84,8 @@
       { "value": "eth", "label": "Ethereum (ETH)", "icon": "⟠" },
       { "value": "usdc", "label": "USD Coin (USDC)", "icon": "💵" },
       { "value": "btc", "label": "Bitcoin (BTC)", "icon": "₿" },
-      { "value": "fiat", "label": "Traditional Banking", "icon": "🏦" },
-      { "value": "other", "label": "Other Cryptocurrencies", "icon": "🔄" }
+      { "value": "other", "label": "Other Cryptocurrencies", "icon": "🔄" },
+      { "value": "fiat", "label": "Traditional Banking", "icon": "🏦" }
     ],
     "methods": {
       "eth": [
