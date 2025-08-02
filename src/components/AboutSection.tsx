@@ -13,21 +13,23 @@ export function AboutSection() {
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 items-start">
-            <div>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Our aim is to support the community in Fuoni Mambosasa in educational matters, 
-                especially learning English. We help people who live challenging lives by teaching 
-                them to read and write, and learn different languages to create employment 
-                opportunities for themselves, including becoming tour guides in the tourism industry.
-              </p>
+            <div className="flex flex-col h-full">
+              <div className="flex-1">
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  Our aim is to support the community in Fuoni Mambosasa in educational matters, 
+                  especially learning English. We help people who live challenging lives by teaching 
+                  them to read and write, and learn different languages to create employment 
+                  opportunities for themselves, including becoming tour guides in the tourism industry.
+                </p>
+                
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                  We also support children who need help with school subjects so they can excel 
+                  in their education. Our focus is on providing quality educational opportunities 
+                  that empower young minds with practical skills for successful futures.
+                </p>
+              </div>
               
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                We also support children who need help with school subjects so they can excel 
-                in their education. Our focus is on providing quality educational opportunities 
-                that empower young minds with practical skills for successful futures.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 mt-auto">
                 <Card>
                   <CardContent className="p-4 text-center">
                     <div className="text-2xl font-bold text-primary mb-1">200+</div>
