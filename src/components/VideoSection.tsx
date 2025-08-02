@@ -6,10 +6,7 @@ export function VideoSection() {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            Support the{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Straight Training Center
-            </span>
+            Support the <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Straight Training Center</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Help us provide quality education and training to students in Zanzibar. 
