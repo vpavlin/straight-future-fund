@@ -278,18 +278,7 @@
         "description": "Our regular teaching schedule"
       }
     ],
-    "socialMedia": [
-      {
-        "platform": "Facebook",
-        "url": "https://facebook.com/straighttrainingcenter",
-        "icon": "Facebook"
-      },
-      {
-        "platform": "Instagram", 
-        "url": "https://instagram.com/straighttrainingcenter",
-        "icon": "Instagram"
-      }
-    ],
+    "socialMedia": [],
     "visitInfo": {
       "title": "Visit Our Center",
       "description": "We welcome visitors who want to see our work firsthand. Please contact us in advance to arrange a visit and meet our amazing students and teachers."
