@@ -238,6 +238,63 @@
       }
     ]
   },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with the Straight Training Center. We'd love to hear from you and answer any questions about our programs.",
+    "methods": [
+      {
+        "type": "Phone",
+        "value": "+255 678 585 256",
+        "label": "Call or WhatsApp",
+        "icon": "Phone",
+        "description": "Contact Modest directly for inquiries"
+      },
+      {
+        "type": "Email",
+        "value": "info@straighttrainingcenter.org",
+        "label": "Email Address",
+        "icon": "Mail",
+        "description": "Send us an email for detailed inquiries"
+      },
+      {
+        "type": "WhatsApp",
+        "value": "+255 678 585 256",
+        "label": "WhatsApp",
+        "icon": "MessageCircle",
+        "description": "Quick messaging via WhatsApp"
+      },
+      {
+        "type": "Location",
+        "value": "Fuoni Mambosasa, Zanzibar, Tanzania",
+        "label": "Physical Address",
+        "icon": "MapPin",
+        "description": "Visit us in person at our training center"
+      },
+      {
+        "type": "Hours",
+        "value": "Classes: 7:00 PM - 9:00 PM daily",
+        "label": "Operating Hours",
+        "icon": "Clock",
+        "description": "Our regular teaching schedule"
+      }
+    ],
+    "socialMedia": [
+      {
+        "platform": "Facebook",
+        "url": "https://facebook.com/straighttrainingcenter",
+        "icon": "Facebook"
+      },
+      {
+        "platform": "Instagram", 
+        "url": "https://instagram.com/straighttrainingcenter",
+        "icon": "Instagram"
+      }
+    ],
+    "visitInfo": {
+      "title": "Visit Our Center",
+      "description": "We welcome visitors who want to see our work firsthand. Please contact us in advance to arrange a visit and meet our amazing students and teachers."
+    }
+  },
   "walletAddresses": {
     "ethereum": "0x601c5e1dcb301fe2fd0df34bc96c7237c91d73d8",
     "bitcoin": "bc1qduj9sks7d7vct2y8tk4d6ve5frvx33vvftdscw"
