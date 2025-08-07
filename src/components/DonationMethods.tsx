@@ -91,7 +91,7 @@ export function DonationMethods() {
           </div>
 
           {selectedCurrency && selectedCurrency !== "other" && (
-            <div className={`grid gap-6 max-w-4xl mx-auto ${(selectedCurrency === 'btc' || selectedCurrency === 'fiat') ? 'md:grid-cols-2' : 'max-w-md'}`}>
+            <div className={`grid gap-6 max-w-4xl mx-auto max-w-md`}>
               {data.donationMethods.methods[selectedCurrency as keyof typeof data.donationMethods.methods]?.map((method, index) => (
                 <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 group relative">
                   <CardHeader className="pb-4 relative">
