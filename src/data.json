@@ -119,12 +119,6 @@
           "explorerName": "Blockstream",
           "color": "bg-gradient-to-r from-orange-500 to-orange-600",
           "description": "Send Bitcoin to our wallet"
-        },
-        {
-          "type": "Lightning Network",
-          "address": "lno1zrxq8pjw7qjlm68mtp7e3yvxee4y5xrgjhhyf2fxhlphpckrvevh50u0qwkrce5ypja4pts2s5stp908e49mr4666r7ecxaszw83jx50yp9puqsr9sdhgk9r2ah4t675f9npga0fcqknkcavykwjh4t5undppjj5ps0sqvuvt2ghzf8dlmsnlugy8ysjyttanyz2kcn0r2mp9tusw7evujfavz6hr4vdqevk7qzzmtx3ac07wt8lqpzjqgfwqe8mzw57pkz8mawfgj0u9ljq7xcllwq2r9qv4nq26qg7uxamqqqse0q0eagq400rm5gx4unkz5w7qv",
-          "color": "bg-gradient-to-r from-yellow-500 to-yellow-600",
-          "description": "Instant Bitcoin payments via Lightning Network"
         }
       ],
       "eur": [
